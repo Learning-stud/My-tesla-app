@@ -1,42 +1,47 @@
-import React, { useState } from 'react';
-import styled from 'styled-components';
-import MenuIcon from '@mui/icons-material/Menu';
-import CloseIcon from '@mui/icons-material/Close';
-
+import React, { useState } from "react";
+import styled from "styled-components";
+import MenuIcon from "@mui/icons-material/Menu";
+import CloseIcon from "@mui/icons-material/Close";
+import { NavLink, Link } from "react-router-dom";
 function Header() {
   const [burgerStatus, setBurgerstatus] = useState(false);
 
   return (
     <Container>
-      <a>
+      <Link to="/">
         <img src="/images/logo.svg" alt="" />
-      </a>
+      </Link>
       <Menu>
-        <a href='#'>Model S</a>
-        <a href='#'>Model 3</a>
-        <a href='#'>Model X</a>
-        <a href='#'>Model Y</a>
-        <a href='#'>Solar Roof</a>
-        <a href='#'>Solar Panels</a>
+        <NavLink to="/modelS">Model S</NavLink>
+        <NavLink to="/ModelQ">Model Q</NavLink>
+        <NavLink to="/ModelX">Model X</NavLink>
+        <NavLink to="/ModelY">Model Y</NavLink>
+        <NavLink to="/ModelY">Solar Panel/uder process </NavLink>
+        <NavLink to="/ModelY">Solar roof / under process</NavLink>
+        {/* <NavLink to="/solarRoof">Solar Roof</NavLink> */}
+        {/* <NavLink to="/solarPanels">Solar Panels</NavLink> */}
       </Menu>
       <RightMenu>
-        <a href='#'>Shop</a>
-        <a href='#'>Tesla Account</a>
+        <NavLink to="#">Feedback</NavLink>
+        <NavLink to="#">Contect Us</NavLink>
         <CustomMenu onClick={() => setBurgerstatus(true)} />
       </RightMenu>
       <BurgerNav show={burgerStatus}>
         <CloseWrapper>
           <CustomClose onClick={() => setBurgerstatus(false)} />
         </CloseWrapper>
-        <li><a href='#'>Model S</a></li>
-        <li><a href='#'>Model 3</a></li>
-        <li><a href='#'>Model X</a></li>
-        <li><a href='#'>Model Y</a></li>
-        <li><a href='#'>Existing Inventory</a></li>
-        <li><a href='#'>Used Inventory</a></li>
-        <li><a href='#'>Trade-In</a></li>
-        <li><a href='#'>CyberTruck</a></li>
-        <li><a href='#'>Roadster</a></li>
+        <li>
+          <NavLink to="/modelS"> Home </NavLink>
+        </li>
+        <li>
+          <NavLink to="/ModelQ">About Us</NavLink>
+        </li>
+        <li>
+          <NavLink to="/ModelX">Our Product</NavLink>
+        </li>
+        <li>
+          <NavLink to="/ModelY">Gallery</NavLink>
+        </li>
       </BurgerNav>
     </Container>
   );
@@ -55,6 +60,8 @@ const Container = styled.div`
   left: 0;
   right: 0;
   z-index: 1;
+  margin-left: 5%;
+  padding-left: 5%;
 `;
 
 const Menu = styled.div`
@@ -65,7 +72,7 @@ const Menu = styled.div`
   a {
     font-weight: 900;
     text-transform: uppercase;
-    padding: 0 20px;
+    padding: 0 75px;
     flex-wrap: nowrap;
   }
   @media (max-width: 768px) {
@@ -100,9 +107,9 @@ const BurgerNav = styled.div`
   display: flex;
   flex-direction: column;
   text-align: start;
-  transform: ${(props) => (props.show ? 'translateX(0)' : 'translateX(100%)')};
+  transform: ${(props) => (props.show ? "translateX(0)" : "translateX(100%)")};
   transition: transform 0.3s ease-in-out; /* Add transition for smooth animation */
-  
+
   li {
     padding: 15px 0;
     border-bottom: 2px solid rgba(0, 0, 0, 0.2);

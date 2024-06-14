@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import Section from './Section'
 const Home = () => {
   return (
-    <container>
+    <Container>
       <Section
         title="Model-S"
         description="Order Online for Touchless Delievery"
@@ -22,7 +22,7 @@ const Home = () => {
       />
       <Section
 
-        title="Model 3"
+        title="Model S"
         description="Order Online for Touchless Delievery"
         backgroungImg="model-3.jpg"
         leftBtnText="Custom order"
@@ -62,13 +62,13 @@ const Home = () => {
         leftBtnText="Order now"
       />
 
-    </container>
+    </Container>
   )
 }
 
 export default Home
-const container = styled.div
-  `
-height: 100vh;
+ const Container = styled.div
+   `
+ height: 100vh;
 
 `

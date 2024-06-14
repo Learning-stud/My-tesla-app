@@ -1,0 +1,54 @@
+import React from 'react';
+import styled from 'styled-components';
+
+const PageContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+
+const Header = styled.div`
+  background-color: black;
+  color: white;
+  padding: 20px;
+  width: 100%;
+`;
+
+const Content = styled.div`
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 20px;
+  width: 100%;
+`;
+
+const ModelSImage = styled.img`
+  max-width: 100%;
+  height: auto;
+`;
+
+const ModelSInfo = styled.div`
+  text-align: left;
+`;
+
+function ModelSPage() {
+  return (
+    <PageContainer>
+      <Header>
+        <h1>Tesla Model S</h1>
+        <p>Electric Vehicle</p>
+      </Header>
+      <Content>
+        <ModelSImage src="/images/model-s.jpg" alt="Tesla Model S" />
+        <ModelSInfo>
+          <h2>Performance</h2>
+          <p>Quickest acceleration, Longest range, etc.</p>
+          <h2>Interior</h2>
+          <p>Luxurious interior, Advanced technology, etc.</p>
+        </ModelSInfo>
+      </Content>
+    </PageContainer>
+  );
+}
+
+export default ModelSPage;
